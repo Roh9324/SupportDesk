@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import TicketService from "../services/TicketService";
-import "../Styles/CreateTicket.css";
+import "../styles/CreateTicket.css";
 
 function CreateTicket() {
 
