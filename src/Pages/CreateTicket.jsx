@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import TicketService from "../services/TicketService";
+import "../Styles/CreateTicket.css";
 
 function CreateTicket() {
 
@@ -54,51 +55,66 @@ function CreateTicket() {
 
             <Navbar />
 
-            <div className="container">
+            <div className="ticket-page-container">
 
-                <h1>Create Ticket</h1>
+                <div className="ticket-page-card">
+                    <h1>Create Ticket</h1>
+                    <p className="ticket-page-subtitle">Submit a request and our support team will follow up soon.</p>
 
-                <form className="ticket-form" onSubmit={handleSubmit}>
+                    <form className="ticket-form" onSubmit={handleSubmit}>
 
-                    <input
-                        type="text"
-                        name="customerName"
-                        placeholder="Customer Name"
-                        value={ticket.customerName}
-                        onChange={handleChange}
-                        required
-                    />
+                        <label>
+                            Customer Name
+                            <input
+                                type="text"
+                                name="customerName"
+                                placeholder="Enter customer name"
+                                value={ticket.customerName}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
 
-                    <input
-                        type="email"
-                        name="customerEmail"
-                        placeholder="Customer Email"
-                        value={ticket.customerEmail}
-                        onChange={handleChange}
-                        required
-                    />
+                        <label>
+                            Customer Email
+                            <input
+                                type="email"
+                                name="customerEmail"
+                                placeholder="Enter email address"
+                                value={ticket.customerEmail}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
 
-                    <input
-                        type="text"
-                        name="subject"
-                        placeholder="Subject"
-                        value={ticket.subject}
-                        onChange={handleChange}
-                        required
-                    />
+                        <label>
+                            Subject
+                            <input
+                                type="text"
+                                name="subject"
+                                placeholder="Brief summary of the issue"
+                                value={ticket.subject}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
 
-                    <textarea
-                        rows="6"
-                        name="description"
-                        placeholder="Describe your issue..."
-                        value={ticket.description}
-                        onChange={handleChange}
-                        required
-                    />
+                        <label>
+                            Description
+                            <textarea
+                                rows="6"
+                                name="description"
+                                placeholder="Describe your issue in detail"
+                                value={ticket.description}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
 
-                    <button>Create Ticket</button>
+                        <button type="submit">Create Ticket</button>
 
-                </form>
+                    </form>
+                </div>
 
             </div>
 
