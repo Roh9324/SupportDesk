@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8081/api/tickets";
+const API_URL = "https://supportdesk-rd51.onrender.com";
 
 const TicketService = {
 
