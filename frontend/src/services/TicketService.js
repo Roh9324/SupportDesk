@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8081";
+const DEFAULT_BACKEND_URL = "https://supportdesk-rd51.onrender.com";
+const BASE_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? DEFAULT_BACKEND_URL : "http://localhost:8081");
 const API_URL = `${BASE_URL.replace(/\/$/, "")}/api/tickets`;
 
 const TicketService = {
